@@ -102,6 +102,3 @@ Apache License, Version 2.0.
 
 We welcome contributions! Feel free to submit issues, feature requests, or PRs on https://github.com/tomitribe/archie[GitHub].
 
-== Authors
-
-- David Blevins (david@tomitribe.com)

@@ -14,6 +14,7 @@
 package org.tomitribe.archie;
 
 import org.junit.Test;
+import org.tomitribe.archie.util.Zips;
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
 

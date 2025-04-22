@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tomitribe.archie;
+package org.tomitribe.archie.util;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
@@ -30,6 +30,9 @@ import java.io.PrintStream;
 import java.io.UncheckedIOException;
 import java.util.Objects;
 
+/**
+ * Useful for writing test cases to inspect the results of transformations
+ */
 public class TarGzs {
 
     private TarGzs() {

@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tomitribe.archie;
+package org.tomitribe.archie.util;
 
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
@@ -31,6 +31,9 @@ import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/**
+ * Useful for writing test cases to inspect the results of transformations
+ */
 public class Zips {
     private Zips() {
         // checkstyle - noop

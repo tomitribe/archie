@@ -16,6 +16,7 @@ package org.tomitribe.archie;
 
 import org.apache.commons.compress.archivers.jar.JarArchiveEntry;
 import org.junit.Test;
+import org.tomitribe.archie.util.Zips;
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
 

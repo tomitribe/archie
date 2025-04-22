@@ -1,0 +1,107 @@
+= Archie: Stream-Based Archive Transformation Library
+:toc: auto
+:icons: font
+:source-highlighter: highlightjs
+:github-url: https://github.com/tomitribe/archie
+
+Archie is a Java library for stream-based manipulation of `zip`, `jar`, and `tar.gz` files. Rather than explode and reassemble archives, Archie applies transformations on-the-fly with a simple and expressive callback model.
+
+== Features
+
+- Works with `zip`, `jar`, and `tar.gz` formats
+- Stream-friendly: avoids unzip → modify → rezip overhead
+- Simple builder-based transformation model
+- Supports:
+* Injecting entries before/after the archive or individual entries
+* Skipping entries
+* Prepending text to existing files
+
+== Philosophy
+
+Archie promotes _streaming transformations_ of archives without hitting the disk or loading files completely into memory.
+
+Any manipulation of an archive will involve copying the file once.  Archie allows building complex transformation rules
+that act on entries during the streaming process.  The result is the compressed archive is never fully unpacked on disk
+at any one time, yet very complicated manipulations can be done on each entry as they are individually streamed.
+
+Useful in deployment pipelines, repackaging tools, or license/compliance stamping workflows.
+
+== Getting Started
+
+Add Archie to your project:
+
+[source,xml]
+----
+<dependency>
+    <groupId>org.tomitribe</groupId>
+    <artifactId>archie</artifactId>
+    <version>1.0.0</version> <!-- Replace with actual -->
+</dependency>
+----
+
+=== Basic Example
+
+Inject a `README.txt` into a JAR file:
+
+[source,java]
+----
+Transformations transformations = Transformations.builder()
+    .before(InsertEntry.builder()
+        .name("README.txt")
+        .content("Hello, World!")
+        .build())
+    .build();
+
+new JarTransformation(transformations)
+    .transform(new FileInputStream("input.jar"),
+               new FileOutputStream("output.jar"));
+----
+
+=== Before / After Entry Injection
+
+Insert content relative to an entry:
+
+[source,java]
+----
+Transformations.builder()
+    .beforeEntry(name -> name.endsWith("Red.class"), stream -> {
+        stream.writeEntry("BeforeRed.txt", "Pre-content");
+    })
+    .afterEntry(name -> name.endsWith("Red.class"), stream -> {
+        stream.writeEntry("AfterRed.txt", "Post-content");
+    })
+    .build();
+----
+
+=== Prepending to Existing Entries
+
+[source,java]
+----
+Transformations.builder()
+    .prepend(name -> name.equals("META-INF/LICENSE"),
+        "Copyright Acme Corporation. 2025\n\n")
+    .build();
+----
+
+== Supported Formats
+
+Archie supports the following formats via dedicated transformation types:
+
+- `JarTransformation`
+- `ZipTransformation`
+- `TarGzTransformation`
+
+Each accepts the same `Transformations` model for consistent usage across formats.
+
+
+== License
+
+Apache License, Version 2.0.
+
+== Contributing
+
+We welcome contributions! Feel free to submit issues, feature requests, or PRs on https://github.com/tomitribe/archie[GitHub].
+
+== Authors
+
+- David Blevins (david@tomitribe.com)

@@ -26,14 +26,14 @@
   </parent>
 
   <artifactId>archie</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Tomitribe :: Archie</name>
 
   <scm>
     <connection>scm:git:git@github.com:tomitribe/archie.git</connection>
     <url>scm:git:git@github.com:tomitribe/archie.git</url>
     <developerConnection>scm:git:git@github.com:tomitribe/archie.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>archie-1.0</tag>
   </scm>
 
   <dependencies>

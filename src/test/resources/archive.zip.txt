@@ -1,0 +1,8 @@
+$ tar tzvf distribe-weaver/src/test/resources//archive.zip
+-rw-r--r--  0 501    0          19 Jun 27 16:50 LICENSE
+-rw-r--r--  0 501    0        2031 Jun 27 17:37 archive.jar
+drwxr-xr-x  0 501    0           0 Jun 27 16:57 com/
+drwxr-xr-x  0 501    0           0 Jun 27 16:57 com/example/
+-rw-r--r--  0 501    0         537 Jun 27 16:50 com/example/Blue.class
+-rw-r--r--  0 501    0         534 Jun 27 16:50 com/example/Red.class
+-rw-r--r--  0 501    0         540 Jun 27 16:50 com/example/Green.class

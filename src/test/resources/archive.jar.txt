@@ -1,0 +1,9 @@
+$ tar tzvf distribe-weaver/src/test/resources/archive.jar
+drwxrwxr-x  0 0      0           0 Jun 27 16:58 META-INF/
+-rw-rw-r--  0 0      0          65 Jun 27 16:58 META-INF/MANIFEST.MF
+-rw-rw-r--  0 0      0          19 Jun 27 16:50 META-INF/LICENSE
+drwxrwxr-x  0 0      0           0 Jun 27 16:57 com/
+drwxrwxr-x  0 0      0           0 Jun 27 16:57 com/example/
+-rw-rw-r--  0 0      0         537 Jun 27 16:50 com/example/Blue.class
+-rw-rw-r--  0 0      0         534 Jun 27 16:50 com/example/Red.class
+-rw-rw-r--  0 0      0         540 Jun 27 16:50 com/example/Green.class
